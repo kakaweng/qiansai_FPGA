@@ -1,0 +1,5 @@
+# 日志与缓存
+*.log
+__pycache__/
+.serena/
+*.tmp

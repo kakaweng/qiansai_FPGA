@@ -1,0 +1,34 @@
+version,2022.2-SP6.4<build 146967>
+project name,hdmi_loop.pds
+
+Single Seed:
+Seed,State,Convergence,Setup(Slow),Setup(Fast),Hold(Slow),Hold(Fast),Recovery(Slow),Recovery(Fast),Removal(Slow),Removal(Fast),PBM-GP,PBM-PreGP,PBM-PostGP,LP,Total Placement Cpu Time,Detailed routing,Total Routing Cpu Time,Wire Length After Post-GP,Wire Length After LP,Wire Length After DP,Routing Arc Length,Worst Slack After GP Timing,Worst Slack After LP Timing,Worst Slack Before RP,Worst Slack Before DP,Worst Slack After DP,Worst Slack After Placement,Worst Slack After TA By Preroute,TNS After DP,TNS Before Route,Setup(Slow) Total Failing TNS,Setup(Slow) Total Failing Endpoints,Hold(Slow) Total Failing THS,Hold(Slow) Total Failing Endpoints,Power
+single,OK,Fail,-8.349,-5.385,-5.570,-3.507,-8.669,-5.251,-3.255,-1.818,NA,NA,NA,2.41,79.86,190.62,241.91,NA,NA,NA,427568,NA,NA,-3632,NA,NA,-3444,NA,NA,-4967572,-2184.924,376,-1388.746,339,NA
+Pass Rate/Convergence Rate,100.00%,0.00%
+
+Synthesize:
+control_set,483
+Synthesize Performance Summary:
+slack category,Synthesize Setup WNS,Synthesize Setup TNS,Synthesize Recovery WNS,Synthesize Recovery TNS
+slack value,-7.047,-1895.716,-4.973,-4720.633
+Synthesize Process Cpu Time,0h:1m:39s
+
+Device Map:
+Device Map Resource Usage Summary:
+Logic Utilization,LUT,FF,DRM,APM,Distributed RAM,HSSTHP,USCM,HCKB,RCKB
+Used,20459,15727,132.5,6.5,3014,NA,11,NA,0
+Available,42800,64200,134,84,17000,NA,30,NA,24
+Utilization(%),48%,25%,99%,8%,18%,NA,37%,NA,0%
+Device Map Process Cpu Time,0h:0m:18s
+
+Project Configurations:
+top module,hdmi_loop
+compile," -fsm_compiler {original} "
+synthesize," -dir {C:/pango/PDS_2021.4-SP2/syn/bin/synplify_pro.exe} 
+ -ads "
+device map,
+place & route,
+
+Test Parameters Configurations:
+testparam,
+

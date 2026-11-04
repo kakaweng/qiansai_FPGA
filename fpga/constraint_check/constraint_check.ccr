@@ -1,0 +1,372 @@
+##### Written on 2026/11/02 16:02:19 ###############################
+
+
+##### INFO ##################################################
+
+Current device : 
+	PGL50H-6FBG484
+
+Top Module : 
+	hdmi_loop
+
+Constraint File(s) : 
+	F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc
+
+##### SUMMARY ######################################################
+
+Found 0 error(s), 33 critical warning(s), 82 warning(s), out of 1188 constraint(s)
+
+
+Inapplicable constraints(except overwritten constraints):
+********************************************
+
+define_attribute {p:cam_data[7]} {PAP_IO_DIRECTION} {INPUT}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1155)] PAP_IO_DIRECTION is already defined in p:cam_data[7], new value INPUT will overwrite the current value.
+
+define_attribute {p:cam_data[7]} {PAP_IO_LOC} {AB13}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1156)] PAP_IO_LOC is already defined in p:cam_data[7], new value AB13 will overwrite the current value.
+
+define_attribute {p:cam_data[7]} {PAP_IO_VCCIO} {3.3}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1157)] PAP_IO_VCCIO is already defined in p:cam_data[7], new value 3.3 will overwrite the current value.
+
+define_attribute {p:cam_data[7]} {PAP_IO_STANDARD} {LVCMOS33}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1158)] PAP_IO_STANDARD is already defined in p:cam_data[7], new value LVCMOS33 will overwrite the current value.
+
+define_attribute {p:cam_data[7]} {PAP_IO_NONE} {TRUE}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1159)] PAP_IO_NONE is already defined in p:cam_data[7], new value TRUE will overwrite the current value.
+
+define_attribute {p:cam_data[6]} {PAP_IO_DIRECTION} {INPUT}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1160)] PAP_IO_DIRECTION is already defined in p:cam_data[6], new value INPUT will overwrite the current value.
+
+define_attribute {p:cam_data[6]} {PAP_IO_LOC} {AA10}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1161)] PAP_IO_LOC is already defined in p:cam_data[6], new value AA10 will overwrite the current value.
+
+define_attribute {p:cam_data[6]} {PAP_IO_VCCIO} {3.3}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1162)] PAP_IO_VCCIO is already defined in p:cam_data[6], new value 3.3 will overwrite the current value.
+
+define_attribute {p:cam_data[6]} {PAP_IO_STANDARD} {LVCMOS33}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1163)] PAP_IO_STANDARD is already defined in p:cam_data[6], new value LVCMOS33 will overwrite the current value.
+
+define_attribute {p:cam_data[6]} {PAP_IO_NONE} {TRUE}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1164)] PAP_IO_NONE is already defined in p:cam_data[6], new value TRUE will overwrite the current value.
+
+define_attribute {p:cam_data[5]} {PAP_IO_DIRECTION} {INPUT}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1165)] PAP_IO_DIRECTION is already defined in p:cam_data[5], new value INPUT will overwrite the current value.
+
+define_attribute {p:cam_data[5]} {PAP_IO_LOC} {AB11}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1166)] PAP_IO_LOC is already defined in p:cam_data[5], new value AB11 will overwrite the current value.
+
+define_attribute {p:cam_data[5]} {PAP_IO_VCCIO} {3.3}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1167)] PAP_IO_VCCIO is already defined in p:cam_data[5], new value 3.3 will overwrite the current value.
+
+define_attribute {p:cam_data[5]} {PAP_IO_STANDARD} {LVCMOS33}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1168)] PAP_IO_STANDARD is already defined in p:cam_data[5], new value LVCMOS33 will overwrite the current value.
+
+define_attribute {p:cam_data[5]} {PAP_IO_NONE} {TRUE}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1169)] PAP_IO_NONE is already defined in p:cam_data[5], new value TRUE will overwrite the current value.
+
+define_attribute {p:cam_data[4]} {PAP_IO_DIRECTION} {INPUT}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1170)] PAP_IO_DIRECTION is already defined in p:cam_data[4], new value INPUT will overwrite the current value.
+
+define_attribute {p:cam_data[4]} {PAP_IO_LOC} {W11}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1171)] PAP_IO_LOC is already defined in p:cam_data[4], new value W11 will overwrite the current value.
+
+define_attribute {p:cam_data[4]} {PAP_IO_VCCIO} {3.3}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1172)] PAP_IO_VCCIO is already defined in p:cam_data[4], new value 3.3 will overwrite the current value.
+
+define_attribute {p:cam_data[4]} {PAP_IO_STANDARD} {LVCMOS33}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1173)] PAP_IO_STANDARD is already defined in p:cam_data[4], new value LVCMOS33 will overwrite the current value.
+
+define_attribute {p:cam_data[4]} {PAP_IO_NONE} {TRUE}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1174)] PAP_IO_NONE is already defined in p:cam_data[4], new value TRUE will overwrite the current value.
+
+define_attribute {p:cam_data[3]} {PAP_IO_DIRECTION} {INPUT}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1175)] PAP_IO_DIRECTION is already defined in p:cam_data[3], new value INPUT will overwrite the current value.
+
+define_attribute {p:cam_data[3]} {PAP_IO_LOC} {R11}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1176)] PAP_IO_LOC is already defined in p:cam_data[3], new value R11 will overwrite the current value.
+
+define_attribute {p:cam_data[3]} {PAP_IO_VCCIO} {3.3}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1177)] PAP_IO_VCCIO is already defined in p:cam_data[3], new value 3.3 will overwrite the current value.
+
+define_attribute {p:cam_data[3]} {PAP_IO_STANDARD} {LVCMOS33}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1178)] PAP_IO_STANDARD is already defined in p:cam_data[3], new value LVCMOS33 will overwrite the current value.
+
+define_attribute {p:cam_data[3]} {PAP_IO_NONE} {TRUE}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1179)] PAP_IO_NONE is already defined in p:cam_data[3], new value TRUE will overwrite the current value.
+
+define_attribute {p:cam_data[2]} {PAP_IO_DIRECTION} {INPUT}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1180)] PAP_IO_DIRECTION is already defined in p:cam_data[2], new value INPUT will overwrite the current value.
+
+define_attribute {p:cam_data[2]} {PAP_IO_LOC} {T11}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1181)] PAP_IO_LOC is already defined in p:cam_data[2], new value T11 will overwrite the current value.
+
+define_attribute {p:cam_data[2]} {PAP_IO_VCCIO} {3.3}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1182)] PAP_IO_VCCIO is already defined in p:cam_data[2], new value 3.3 will overwrite the current value.
+
+define_attribute {p:cam_data[2]} {PAP_IO_STANDARD} {LVCMOS33}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1183)] PAP_IO_STANDARD is already defined in p:cam_data[2], new value LVCMOS33 will overwrite the current value.
+
+define_attribute {p:cam_data[2]} {PAP_IO_NONE} {TRUE}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1184)] PAP_IO_NONE is already defined in p:cam_data[2], new value TRUE will overwrite the current value.
+
+define_attribute {p:cam_data[1]} {PAP_IO_DIRECTION} {INPUT}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1185)] PAP_IO_DIRECTION is already defined in p:cam_data[1], new value INPUT will overwrite the current value.
+
+define_attribute {p:cam_data[1]} {PAP_IO_LOC} {Y10}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1186)] PAP_IO_LOC is already defined in p:cam_data[1], new value Y10 will overwrite the current value.
+
+define_attribute {p:cam_data[1]} {PAP_IO_VCCIO} {3.3}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1187)] PAP_IO_VCCIO is already defined in p:cam_data[1], new value 3.3 will overwrite the current value.
+
+define_attribute {p:cam_data[1]} {PAP_IO_STANDARD} {LVCMOS33}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1188)] PAP_IO_STANDARD is already defined in p:cam_data[1], new value LVCMOS33 will overwrite the current value.
+
+define_attribute {p:cam_data[1]} {PAP_IO_NONE} {TRUE}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1189)] PAP_IO_NONE is already defined in p:cam_data[1], new value TRUE will overwrite the current value.
+
+define_attribute {p:cam_data[0]} {PAP_IO_DIRECTION} {INPUT}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1190)] PAP_IO_DIRECTION is already defined in p:cam_data[0], new value INPUT will overwrite the current value.
+
+define_attribute {p:cam_data[0]} {PAP_IO_LOC} {V11}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1191)] PAP_IO_LOC is already defined in p:cam_data[0], new value V11 will overwrite the current value.
+
+define_attribute {p:cam_data[0]} {PAP_IO_VCCIO} {3.3}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1192)] PAP_IO_VCCIO is already defined in p:cam_data[0], new value 3.3 will overwrite the current value.
+
+define_attribute {p:cam_data[0]} {PAP_IO_STANDARD} {LVCMOS33}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1193)] PAP_IO_STANDARD is already defined in p:cam_data[0], new value LVCMOS33 will overwrite the current value.
+
+define_attribute {p:cam_data[0]} {PAP_IO_NONE} {TRUE}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1194)] PAP_IO_NONE is already defined in p:cam_data[0], new value TRUE will overwrite the current value.
+
+define_attribute {p:cam_sda} {PAP_IO_DIRECTION} {INOUT}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1195)] PAP_IO_DIRECTION is already defined in p:cam_sda, new value INOUT will overwrite the current value.
+
+define_attribute {p:cam_sda} {PAP_IO_LOC} {Y13}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1196)] PAP_IO_LOC is already defined in p:cam_sda, new value Y13 will overwrite the current value.
+
+define_attribute {p:cam_sda} {PAP_IO_VCCIO} {3.3}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1197)] PAP_IO_VCCIO is already defined in p:cam_sda, new value 3.3 will overwrite the current value.
+
+define_attribute {p:cam_sda} {PAP_IO_STANDARD} {LVCMOS33}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1198)] PAP_IO_STANDARD is already defined in p:cam_sda, new value LVCMOS33 will overwrite the current value.
+
+define_attribute {p:cam_sda} {PAP_IO_DRIVE} {8}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1199)] PAP_IO_DRIVE is already defined in p:cam_sda, new value 8 will overwrite the current value.
+
+define_attribute {p:cam_sda} {PAP_IO_NONE} {TRUE}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1200)] PAP_IO_NONE is already defined in p:cam_sda, new value TRUE will overwrite the current value.
+
+define_attribute {p:cam_sda} {PAP_IO_SLEW} {SLOW}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1201)] PAP_IO_SLEW is already defined in p:cam_sda, new value SLOW will overwrite the current value.
+
+define_attribute {p:cam_rst_n} {PAP_IO_DIRECTION} {OUTPUT}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1202)] PAP_IO_DIRECTION is already defined in p:cam_rst_n, new value OUTPUT will overwrite the current value.
+
+define_attribute {p:cam_rst_n} {PAP_IO_LOC} {W10}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1203)] PAP_IO_LOC is already defined in p:cam_rst_n, new value W10 will overwrite the current value.
+
+define_attribute {p:cam_rst_n} {PAP_IO_VCCIO} {3.3}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1204)] PAP_IO_VCCIO is already defined in p:cam_rst_n, new value 3.3 will overwrite the current value.
+
+define_attribute {p:cam_rst_n} {PAP_IO_STANDARD} {LVCMOS33}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1205)] PAP_IO_STANDARD is already defined in p:cam_rst_n, new value LVCMOS33 will overwrite the current value.
+
+define_attribute {p:cam_rst_n} {PAP_IO_DRIVE} {8}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1206)] PAP_IO_DRIVE is already defined in p:cam_rst_n, new value 8 will overwrite the current value.
+
+define_attribute {p:cam_rst_n} {PAP_IO_NONE} {TRUE}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1207)] PAP_IO_NONE is already defined in p:cam_rst_n, new value TRUE will overwrite the current value.
+
+define_attribute {p:cam_rst_n} {PAP_IO_SLEW} {SLOW}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1208)] PAP_IO_SLEW is already defined in p:cam_rst_n, new value SLOW will overwrite the current value.
+
+define_attribute {p:cam_scl} {PAP_IO_DIRECTION} {OUTPUT}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1209)] PAP_IO_DIRECTION is already defined in p:cam_scl, new value OUTPUT will overwrite the current value.
+
+define_attribute {p:cam_scl} {PAP_IO_LOC} {Y11}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1210)] PAP_IO_LOC is already defined in p:cam_scl, new value Y11 will overwrite the current value.
+
+define_attribute {p:cam_scl} {PAP_IO_VCCIO} {3.3}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1211)] PAP_IO_VCCIO is already defined in p:cam_scl, new value 3.3 will overwrite the current value.
+
+define_attribute {p:cam_scl} {PAP_IO_STANDARD} {LVCMOS33}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1212)] PAP_IO_STANDARD is already defined in p:cam_scl, new value LVCMOS33 will overwrite the current value.
+
+define_attribute {p:cam_scl} {PAP_IO_DRIVE} {8}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1213)] PAP_IO_DRIVE is already defined in p:cam_scl, new value 8 will overwrite the current value.
+
+define_attribute {p:cam_scl} {PAP_IO_NONE} {TRUE}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1214)] PAP_IO_NONE is already defined in p:cam_scl, new value TRUE will overwrite the current value.
+
+define_attribute {p:cam_scl} {PAP_IO_SLEW} {SLOW}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1215)] PAP_IO_SLEW is already defined in p:cam_scl, new value SLOW will overwrite the current value.
+
+define_attribute {p:cam_href} {PAP_IO_DIRECTION} {INPUT}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1216)] PAP_IO_DIRECTION is already defined in p:cam_href, new value INPUT will overwrite the current value.
+
+define_attribute {p:cam_href} {PAP_IO_LOC} {AB10}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1217)] PAP_IO_LOC is already defined in p:cam_href, new value AB10 will overwrite the current value.
+
+define_attribute {p:cam_href} {PAP_IO_VCCIO} {3.3}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1218)] PAP_IO_VCCIO is already defined in p:cam_href, new value 3.3 will overwrite the current value.
+
+define_attribute {p:cam_href} {PAP_IO_STANDARD} {LVCMOS33}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1219)] PAP_IO_STANDARD is already defined in p:cam_href, new value LVCMOS33 will overwrite the current value.
+
+define_attribute {p:cam_href} {PAP_IO_NONE} {TRUE}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1220)] PAP_IO_NONE is already defined in p:cam_href, new value TRUE will overwrite the current value.
+
+define_attribute {p:cam_pclk} {PAP_IO_DIRECTION} {INPUT}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1221)] PAP_IO_DIRECTION is already defined in p:cam_pclk, new value INPUT will overwrite the current value.
+
+define_attribute {p:cam_pclk} {PAP_IO_LOC} {T12}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1222)] PAP_IO_LOC is already defined in p:cam_pclk, new value T12 will overwrite the current value.
+
+define_attribute {p:cam_pclk} {PAP_IO_VCCIO} {3.3}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1223)] PAP_IO_VCCIO is already defined in p:cam_pclk, new value 3.3 will overwrite the current value.
+
+define_attribute {p:cam_pclk} {PAP_IO_STANDARD} {LVCMOS33}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1224)] PAP_IO_STANDARD is already defined in p:cam_pclk, new value LVCMOS33 will overwrite the current value.
+
+define_attribute {p:cam_pclk} {PAP_IO_NONE} {TRUE}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1225)] PAP_IO_NONE is already defined in p:cam_pclk, new value TRUE will overwrite the current value.
+
+define_attribute {p:cam_vsync} {PAP_IO_DIRECTION} {INPUT}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1226)] PAP_IO_DIRECTION is already defined in p:cam_vsync, new value INPUT will overwrite the current value.
+
+define_attribute {p:cam_vsync} {PAP_IO_LOC} {U12}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1227)] PAP_IO_LOC is already defined in p:cam_vsync, new value U12 will overwrite the current value.
+
+define_attribute {p:cam_vsync} {PAP_IO_VCCIO} {3.3}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1228)] PAP_IO_VCCIO is already defined in p:cam_vsync, new value 3.3 will overwrite the current value.
+
+define_attribute {p:cam_vsync} {PAP_IO_STANDARD} {LVCMOS33}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1229)] PAP_IO_STANDARD is already defined in p:cam_vsync, new value LVCMOS33 will overwrite the current value.
+
+define_attribute {p:cam_vsync} {PAP_IO_NONE} {TRUE}
+	W: ConstraintEditor-4026: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1230)] PAP_IO_NONE is already defined in p:cam_vsync, new value TRUE will overwrite the current value.
+
+define_attribute {p:b_out[5]} {PAP_IO_LOC} {R22}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 16)] | Port b_out[5] has been placed at location R22, whose type is share pin.
+
+define_attribute {p:b_out[4]} {PAP_IO_LOC} {R20}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 23)] | Port b_out[4] has been placed at location R20, whose type is share pin.
+
+define_attribute {p:b_out[2]} {PAP_IO_LOC} {T21}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 37)] | Port b_out[2] has been placed at location T21, whose type is share pin.
+
+define_attribute {p:g_out[7]} {PAP_IO_LOC} {L17}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 58)] | Port g_out[7] has been placed at location L17, whose type is share pin.
+
+define_attribute {p:g_out[6]} {PAP_IO_LOC} {K20}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 65)] | Port g_out[6] has been placed at location K20, whose type is share pin.
+
+define_attribute {p:g_out[5]} {PAP_IO_LOC} {L19}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 72)] | Port g_out[5] has been placed at location L19, whose type is share pin.
+
+define_attribute {p:g_out[0]} {PAP_IO_LOC} {M21}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 107)] | Port g_out[0] has been placed at location M21, whose type is share pin.
+
+define_attribute {p:r_out[7]} {PAP_IO_LOC} {H19}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 114)] | Port r_out[7] has been placed at location H19, whose type is share pin.
+
+define_attribute {p:r_out[6]} {PAP_IO_LOC} {H22}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 121)] | Port r_out[6] has been placed at location H22, whose type is share pin.
+
+define_attribute {p:r_out[5]} {PAP_IO_LOC} {H21}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 128)] | Port r_out[5] has been placed at location H21, whose type is share pin.
+
+define_attribute {p:r_out[0]} {PAP_IO_LOC} {K17}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 163)] | Port r_out[0] has been placed at location K17, whose type is share pin.
+
+define_attribute {p:g_in[5]} {PAP_IO_LOC} {AB18}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 220)] | Port g_in[5] has been placed at location AB18, whose type is share pin.
+
+define_attribute {p:g_in[4]} {PAP_IO_LOC} {AA18}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 225)] | Port g_in[4] has been placed at location AA18, whose type is share pin.
+
+define_attribute {p:g_in[3]} {PAP_IO_LOC} {AB19}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 230)] | Port g_in[3] has been placed at location AB19, whose type is share pin.
+
+define_attribute {p:g_in[2]} {PAP_IO_LOC} {W18}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 235)] | Port g_in[2] has been placed at location W18, whose type is share pin.
+
+define_attribute {p:g_in[1]} {PAP_IO_LOC} {V17}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 240)] | Port g_in[1] has been placed at location V17, whose type is share pin.
+
+define_attribute {p:iic_sda} {PAP_IO_LOC} {V20}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 290)] | Port iic_sda has been placed at location V20, whose type is share pin.
+
+define_attribute {p:iic_scl} {PAP_IO_LOC} {V19}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 318)] | Port iic_scl has been placed at location V19, whose type is share pin.
+
+define_attribute {p:pixclk_out} {PAP_IO_LOC} {M22}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 332)] | Port pixclk_out has been placed at location M22, whose type is share pin.
+
+define_attribute {p:pixclk_in} {PAP_IO_LOC} {AA12}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 363)] | Port pixclk_in has been placed at location AA12, whose type is share pin.
+
+define_attribute {p:pcie_perst_n} {PAP_IO_LOC} {A19}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 376)] | Port pcie_perst_n has been placed at location A19, whose type is share pin.
+
+define_attribute {p:key_mode} {PAP_IO_LOC} {K18}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 413)] | Port key_mode has been placed at location K18, whose type is share pin.
+
+define_attribute {p:key_route_straight} {PAP_IO_LOC} {J19}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 444)] | Port key_route_straight has been placed at location J19, whose type is share pin.
+
+define_attribute {p:key_route_right} {PAP_IO_LOC} {H20}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 450)] | Port key_route_right has been placed at location H20, whose type is share pin.
+
+define_attribute {p:mem_dq[14]} {PAP_IO_LOC} {P3}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 703)] | Port mem_dq[14] has been placed at location P3, whose type is share pin.
+
+define_attribute {p:mem_dq[11]} {PAP_IO_LOC} {M1}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 724)] | Port mem_dq[11] has been placed at location M1, whose type is share pin.
+
+define_attribute {p:mem_dq[9]} {PAP_IO_LOC} {M2}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 738)] | Port mem_dq[9] has been placed at location M2, whose type is share pin.
+
+define_attribute {p:eth_txd[3]} {PAP_IO_LOC} {A18}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 986)] | Port eth_txd[3] has been placed at location A18, whose type is share pin.
+
+define_attribute {p:eth_txd[2]} {PAP_IO_LOC} {C18}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 994)] | Port eth_txd[2] has been placed at location C18, whose type is share pin.
+
+define_attribute {p:eth_txd[1]} {PAP_IO_LOC} {D17}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1002)] | Port eth_txd[1] has been placed at location D17, whose type is share pin.
+
+define_attribute {p:eth_tx_ctl} {PAP_IO_LOC} {B18}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1018)] | Port eth_tx_ctl has been placed at location B18, whose type is share pin.
+
+define_attribute {p:cam_data[7]} {PAP_IO_LOC} {AB13}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1156)] | Port cam_data[7] has been placed at location AB13, whose type is share pin.
+
+define_attribute {p:cam_sda} {PAP_IO_LOC} {Y13}
+	C: ConstraintEditor-2002: [F:/B_file/jichuangsai/Pango_FPGA/06_hdmi_loop_1/src/hdmi_loop.fdc(line number: 1196)] | Port cam_sda has been placed at location Y13, whose type is share pin.
+
+
+Constraints with issues:
+********************************************
+
+
+Issues without commands:
+********************************************
+
+
+Unconstrained ports:
+********************************************
+
+W: ConstraintEditor-4019: Port Bus 'pcie_rxn' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port Bus 'pcie_rxp' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port Bus 'pcie_txn' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port Bus 'pcie_txp' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'pcie_ref_clk_n' unspecified I/O constraint.
+W: ConstraintEditor-4019: Port 'pcie_ref_clk_p' unspecified I/O constraint.
+
+Constraints with matching wildcard expressions:
+********************************************
+
+
