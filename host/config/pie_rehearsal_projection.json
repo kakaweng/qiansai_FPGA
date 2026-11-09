@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "roi": [0, 0, 1, 1],
+  "points": [[0.44, 0.72], [0.56, 0.72], [0.90, 0.96], [0.10, 0.96]],
+  "calibrated": false,
+  "scope": "PIE display-only approximate road-plane mapping; manually chosen display reference, not official camera calibration or metric ground truth"
+}

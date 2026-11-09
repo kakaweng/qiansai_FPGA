@@ -1,0 +1,33 @@
+{
+  "schema_version": "windows_video_decision_2.0",
+  "description": "Local video image perception and advisory rules. Signal ROI is calibrated for video_20260929_112507.mp4; no annotation timeline is consumed.",
+  "perception": {
+    "search_region": [0.15, 0.04, 0.85, 0.60],
+    "min_detection_score": 0.25,
+    "confirm_frames": 3,
+    "evidence_timeout_ms": 500,
+    "detect_yellow": true,
+    "fallback_require_pair": true,
+    "color_thresholds": {"green_hue_min": 72, "green_hue_max": 95},
+    "lamp_geometry": {"min_fill_ratio": 0.25, "min_dark_fraction": 0.35},
+    "pair_geometry": {"max_horizontal_gap_ratio": 40, "max_area_ratio": 3},
+    "lane_detection": {
+      "processing_width": 960,
+      "white_value_min": 130,
+      "white_contrast_min": 12,
+      "contrast_kernel_size": 25,
+      "marking_min_height": 8,
+      "marking_min_elongation": 3,
+      "region": [0.0, 0.60, 1.0, 0.87],
+      "vanishing_point": [0.46, 0.60],
+      "camera_center": 0.50,
+      "reference_row": 0.94,
+      "confirm_frames": 2,
+      "geometry_timeout_ms": 350
+    }
+  },
+  "behavior": {
+    "mode": "advisory_only",
+    "version": "windows-video-behavior-v2.1"
+  }
+}

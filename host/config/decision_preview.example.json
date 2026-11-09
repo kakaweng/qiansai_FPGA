@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "description": "Configure the real signal binding and pedestrian conflict region before expecting PROCEED. Unknown observations keep the decision waiting.",
+  "signal_required": true,
+  "signal_bound": false,
+  "pedestrian_conflict_roi": null,
+  "person_min_score": 0.25,
+  "person_overlap_ratio": 0.1,
+  "requested_maneuver": "keep_lane",
+  "decision": {
+    "go_confirm_frames": 3,
+    "release_clear_frames": 3,
+    "input_timeout_ns": 500000000
+  }
+}

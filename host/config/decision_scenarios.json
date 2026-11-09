@@ -1,0 +1,288 @@
+{
+  "schema_version": "driving_decision_replay_1.0",
+  "description": "驾驶决策人工构造场景。所有输入均为模拟，并非视频识别结果。每个场景重置状态机；repeat 自动递增帧序号和时间戳，expected 只检查最后一次，跨线事件时间不会自动刷新。",
+  "scenarios": [
+    {
+      "description": "红灯停车、绿灯确认后通行、黄灯强制行驶告警去重",
+      "frames": [
+        {
+          "observation": {
+            "session_id": "replay-red-green", "frame_seq": 1, "timestamp_ns": 1000000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "red", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "solid", "right_boundary_type": "solid", "left_adjacent_exists": null, "right_adjacent_exists": null, "left_adjacent_clear": null, "right_adjacent_clear": null},
+            "request": {"maneuver": "keep_lane", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": false},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"state": "RED_STOP", "recommended_action": "STOP", "new_alarm_codes": []}
+        },
+        {
+          "repeat": 6,
+          "observation": {
+            "session_id": "replay-red-green", "frame_seq": 2, "timestamp_ns": 1100000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "green", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "solid", "right_boundary_type": "solid", "left_adjacent_exists": null, "right_adjacent_exists": null, "left_adjacent_clear": null, "right_adjacent_clear": null},
+            "request": {"maneuver": "keep_lane", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": false},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"state": "GREEN_GO", "recommended_action": "GO", "new_alarm_codes": []}
+        },
+        {
+          "observation": {
+            "session_id": "replay-red-green", "frame_seq": 8, "timestamp_ns": 1700000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "yellow", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "solid", "right_boundary_type": "solid", "left_adjacent_exists": null, "right_adjacent_exists": null, "left_adjacent_clear": null, "right_adjacent_clear": null},
+            "request": {"maneuver": "keep_lane", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": true},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"state": "YELLOW_WAIT", "recommended_action": "WAIT", "new_alarm_codes": ["yellow_forced_drive"], "alarm_codes": ["yellow_forced_drive"]}
+        },
+        {
+          "repeat": 2,
+          "observation": {
+            "session_id": "replay-red-green", "frame_seq": 9, "timestamp_ns": 1800000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "yellow", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "solid", "right_boundary_type": "solid", "left_adjacent_exists": null, "right_adjacent_exists": null, "left_adjacent_clear": null, "right_adjacent_clear": null},
+            "request": {"maneuver": "keep_lane", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": true},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"recommended_action": "WAIT", "new_alarm_codes": [], "alarm_codes": ["yellow_forced_drive"]}
+        }
+      ]
+    },
+    {
+      "description": "绿灯遇冲突行人停车、连续清空后释放、未知行人状态等待",
+      "frames": [
+        {
+          "repeat": 6,
+          "observation": {
+            "session_id": "replay-pedestrian", "frame_seq": 1, "timestamp_ns": 1000000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "green", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "solid", "right_boundary_type": "dashed", "left_adjacent_exists": false, "right_adjacent_exists": true, "left_adjacent_clear": null, "right_adjacent_clear": true},
+            "request": {"maneuver": "keep_lane", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": false},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"state": "GREEN_GO", "recommended_action": "GO"}
+        },
+        {
+          "observation": {
+            "session_id": "replay-pedestrian", "frame_seq": 7, "timestamp_ns": 1600000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "green", "bound": true}, "pedestrian": {"conflict": "present"},
+            "lane": {"state": "estimated", "left_boundary_type": "solid", "right_boundary_type": "dashed", "left_adjacent_exists": false, "right_adjacent_exists": true, "left_adjacent_clear": null, "right_adjacent_clear": true},
+            "request": {"maneuver": "keep_lane", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": true},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"state": "YIELD_PEDESTRIAN", "recommended_action": "STOP", "permissions": {"change_right": "forbidden"}}
+        },
+        {
+          "repeat": 6,
+          "observation": {
+            "session_id": "replay-pedestrian", "frame_seq": 8, "timestamp_ns": 1700000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "green", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "solid", "right_boundary_type": "dashed", "left_adjacent_exists": false, "right_adjacent_exists": true, "left_adjacent_clear": null, "right_adjacent_clear": true},
+            "request": {"maneuver": "keep_lane", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": false},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"state": "GREEN_GO", "recommended_action": "GO"}
+        },
+        {
+          "observation": {
+            "session_id": "replay-pedestrian", "frame_seq": 14, "timestamp_ns": 2300000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "green", "bound": true}, "pedestrian": {"conflict": "unknown"},
+            "lane": {"state": "estimated", "left_boundary_type": "solid", "right_boundary_type": "dashed", "left_adjacent_exists": false, "right_adjacent_exists": true, "left_adjacent_clear": null, "right_adjacent_clear": true},
+            "request": {"maneuver": "keep_lane", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": false},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"state": "WAIT_PEDESTRIAN", "recommended_action": "WAIT"}
+        }
+      ]
+    },
+    {
+      "description": "短暂丢帧与灯色漏检不沿用通行，恢复后重新确认",
+      "frames": [
+        {
+          "repeat": 6,
+          "observation": {
+            "session_id": "replay-dropout", "frame_seq": 1, "timestamp_ns": 1000000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "green", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "solid", "right_boundary_type": "solid", "left_adjacent_exists": null, "right_adjacent_exists": null, "left_adjacent_clear": null, "right_adjacent_clear": null},
+            "request": {"maneuver": "keep_lane", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": false},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"state": "GREEN_GO", "recommended_action": "GO"}
+        },
+        {
+          "observation": {
+            "session_id": "replay-dropout", "frame_seq": 7, "timestamp_ns": 1600000000, "fresh": false, "source": "manual_simulation",
+            "signal": {"required": true, "state": "green", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "solid", "right_boundary_type": "solid", "left_adjacent_exists": null, "right_adjacent_exists": null, "left_adjacent_clear": null, "right_adjacent_clear": null},
+            "request": {"maneuver": "keep_lane", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": false},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"state": "WAIT_INPUT", "recommended_action": "WAIT", "permissions": {"change_left": "unknown", "change_right": "unknown", "turn_left": "unknown", "turn_right": "unknown"}}
+        },
+        {
+          "observation": {
+            "session_id": "replay-dropout", "frame_seq": 8, "timestamp_ns": 1700000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "unknown", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "solid", "right_boundary_type": "solid", "left_adjacent_exists": null, "right_adjacent_exists": null, "left_adjacent_clear": null, "right_adjacent_clear": null},
+            "request": {"maneuver": "keep_lane", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": false},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"state": "WAIT_SIGNAL", "recommended_action": "WAIT"}
+        },
+        {
+          "repeat": 6,
+          "observation": {
+            "session_id": "replay-dropout", "frame_seq": 9, "timestamp_ns": 1800000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "green", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "solid", "right_boundary_type": "solid", "left_adjacent_exists": null, "right_adjacent_exists": null, "left_adjacent_clear": null, "right_adjacent_clear": null},
+            "request": {"maneuver": "keep_lane", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": false},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"state": "GREEN_GO", "recommended_action": "GO"}
+        }
+      ]
+    },
+    {
+      "description": "实线变道请求被拒绝，实际跨越才告警，重复事件不重发告警",
+      "frames": [
+        {
+          "repeat": 6,
+          "observation": {
+            "session_id": "replay-solid-crossing", "frame_seq": 1, "timestamp_ns": 1000000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "green", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "solid", "right_boundary_type": "dashed", "left_adjacent_exists": true, "right_adjacent_exists": true, "left_adjacent_clear": true, "right_adjacent_clear": true},
+            "request": {"maneuver": "keep_lane", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": false},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"recommended_action": "GO", "alarm_codes": []}
+        },
+        {
+          "observation": {
+            "session_id": "replay-solid-crossing", "frame_seq": 7, "timestamp_ns": 1600000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "green", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "solid", "right_boundary_type": "dashed", "left_adjacent_exists": true, "right_adjacent_exists": true, "left_adjacent_clear": true, "right_adjacent_clear": true},
+            "request": {"maneuver": "change_left", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": false},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"state": "KEEP_LANE", "recommended_action": "WAIT", "permissions": {"change_left": "forbidden"}, "new_alarm_codes": [], "alarm_codes": []}
+        },
+        {
+          "observation": {
+            "session_id": "replay-solid-crossing", "frame_seq": 8, "timestamp_ns": 1700000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "green", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "solid", "right_boundary_type": "dashed", "left_adjacent_exists": true, "right_adjacent_exists": true, "left_adjacent_clear": true, "right_adjacent_clear": true},
+            "request": {"maneuver": "change_left", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": true},
+            "lane_change": {"event_seq": 1, "direction": "left", "timestamp_ns": 1700000000, "crossed_boundary_type": "solid"}
+          },
+          "expected": {"recommended_action": "WAIT", "new_alarm_codes": ["forced_solid_lane_change"], "alarm_codes": ["forced_solid_lane_change"]}
+        },
+        {
+          "repeat": 2,
+          "observation": {
+            "session_id": "replay-solid-crossing", "frame_seq": 9, "timestamp_ns": 1800000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "green", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "solid", "right_boundary_type": "dashed", "left_adjacent_exists": true, "right_adjacent_exists": true, "left_adjacent_clear": true, "right_adjacent_clear": true},
+            "request": {"maneuver": "change_left", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": true},
+            "lane_change": {"event_seq": 1, "direction": "left", "timestamp_ns": 1700000000, "crossed_boundary_type": "solid"}
+          },
+          "expected": {"new_alarm_codes": [], "alarm_codes": ["forced_solid_lane_change"]}
+        }
+      ]
+    },
+    {
+      "description": "虚线但邻道未知时等待，确认邻道清空后允许变道，有障碍再次禁止",
+      "frames": [
+        {
+          "repeat": 6,
+          "observation": {
+            "session_id": "replay-dashed-adjacent", "frame_seq": 1, "timestamp_ns": 1000000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "green", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "dashed", "right_boundary_type": "solid", "left_adjacent_exists": true, "right_adjacent_exists": false, "left_adjacent_clear": null, "right_adjacent_clear": null},
+            "request": {"maneuver": "keep_lane", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": false},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"recommended_action": "GO", "permissions": {"change_left": "unknown"}}
+        },
+        {
+          "observation": {
+            "session_id": "replay-dashed-adjacent", "frame_seq": 7, "timestamp_ns": 1600000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "green", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "dashed", "right_boundary_type": "solid", "left_adjacent_exists": true, "right_adjacent_exists": false, "left_adjacent_clear": null, "right_adjacent_clear": null},
+            "request": {"maneuver": "change_left", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": false},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"state": "KEEP_LANE", "recommended_action": "WAIT", "permissions": {"change_left": "unknown"}, "new_alarm_codes": []}
+        },
+        {
+          "repeat": 6,
+          "observation": {
+            "session_id": "replay-dashed-adjacent", "frame_seq": 8, "timestamp_ns": 1700000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "green", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "dashed", "right_boundary_type": "solid", "left_adjacent_exists": true, "right_adjacent_exists": false, "left_adjacent_clear": true, "right_adjacent_clear": null},
+            "request": {"maneuver": "change_left", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": false},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"recommended_action": "CHANGE_LEFT", "permissions": {"change_left": "allowed"}, "alarm_codes": []}
+        },
+        {
+          "observation": {
+            "session_id": "replay-dashed-adjacent", "frame_seq": 14, "timestamp_ns": 2300000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "green", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "dashed", "right_boundary_type": "solid", "left_adjacent_exists": true, "right_adjacent_exists": false, "left_adjacent_clear": false, "right_adjacent_clear": null},
+            "request": {"maneuver": "change_left", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": false},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"recommended_action": "WAIT", "permissions": {"change_left": "forbidden"}}
+        }
+      ]
+    },
+    {
+      "description": "绿灯不会自动授予左转，许可未知等待，人工明确许可后确认转弯",
+      "frames": [
+        {
+          "repeat": 6,
+          "observation": {
+            "session_id": "replay-turn", "frame_seq": 1, "timestamp_ns": 1000000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "green", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "solid", "right_boundary_type": "solid", "left_adjacent_exists": false, "right_adjacent_exists": false, "left_adjacent_clear": null, "right_adjacent_clear": null},
+            "request": {"maneuver": "keep_lane", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": false},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"recommended_action": "GO", "permissions": {"turn_left": "unknown", "turn_right": "unknown"}}
+        },
+        {
+          "observation": {
+            "session_id": "replay-turn", "frame_seq": 7, "timestamp_ns": 1600000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "green", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "solid", "right_boundary_type": "solid", "left_adjacent_exists": false, "right_adjacent_exists": false, "left_adjacent_clear": null, "right_adjacent_clear": null},
+            "request": {"maneuver": "turn_left", "source": "manual_simulation"}, "turn": {"left": "unknown", "right": "unknown"}, "actual": {"moving": false},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"state": "WAIT_TURN", "recommended_action": "WAIT", "permissions": {"turn_left": "unknown"}}
+        },
+        {
+          "repeat": 6,
+          "observation": {
+            "session_id": "replay-turn", "frame_seq": 8, "timestamp_ns": 1700000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "green", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "solid", "right_boundary_type": "solid", "left_adjacent_exists": false, "right_adjacent_exists": false, "left_adjacent_clear": null, "right_adjacent_clear": null},
+            "request": {"maneuver": "turn_left", "source": "manual_simulation"}, "turn": {"left": "allowed", "right": "unknown"}, "actual": {"moving": false},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"recommended_action": "TURN_LEFT", "permissions": {"turn_left": "allowed"}}
+        },
+        {
+          "observation": {
+            "session_id": "replay-turn", "frame_seq": 14, "timestamp_ns": 2300000000, "fresh": true, "source": "manual_simulation",
+            "signal": {"required": true, "state": "green", "bound": true}, "pedestrian": {"conflict": "clear"},
+            "lane": {"state": "estimated", "left_boundary_type": "solid", "right_boundary_type": "solid", "left_adjacent_exists": false, "right_adjacent_exists": false, "left_adjacent_clear": null, "right_adjacent_clear": null},
+            "request": {"maneuver": "turn_right", "source": "manual_simulation"}, "turn": {"left": "allowed", "right": "forbidden"}, "actual": {"moving": false},
+            "lane_change": {"event_seq": 0, "direction": "left", "timestamp_ns": 0, "crossed_boundary_type": "unknown"}
+          },
+          "expected": {"state": "WAIT_TURN", "recommended_action": "WAIT", "permissions": {"turn_right": "forbidden"}}
+        }
+      ]
+    }
+  ]
+}

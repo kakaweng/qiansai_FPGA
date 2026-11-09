@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "manifest_id": "yolov5s-coco-rgb565-baseline",
+  "model_version": "baseline-2026-10-09",
+  "status": "reference_only",
+  "purpose": "Documents the model currently used by the RK3568 service; the RKNN binary is kept in the existing Ubuntu and board package.",
+  "artifact": {
+    "rknn_filename": "yolov5s-640-640.rknn",
+    "project_path": null,
+    "board_path": "/data/local/tmp/rknn-yolov5-test/model/yolov5s-640-640.rknn",
+    "sha256": null
+  },
+  "target": {
+    "chip": "rk3568",
+    "toolkit": "RKNN-Toolkit2",
+    "toolkit_version": null,
+    "toolkit_version_note": "Original model conversion environment is unavailable; 2.3.2 is the documented board runtime version, not verified conversion provenance.",
+    "runtime": "librknnrt.so",
+    "runtime_version": "2.3.2",
+    "npu_driver_version": "0.8.2",
+    "api": "RKNN C API"
+  },
+  "architecture": {
+    "family": "yolov5",
+    "variant": "yolov5s",
+    "task": "object_detection",
+    "class_count": 80,
+    "input_size": [640, 640],
+    "strides": [8, 16, 32],
+    "anchors": [
+      [[10, 13], [16, 30], [33, 23]],
+      [[30, 61], [62, 45], [59, 119]],
+      [[116, 90], [156, 198], [373, 326]]
+    ]
+  },
+  "labels": {
+    "path": "labels/coco80.txt",
+    "order": "COCO class id, one label per line, zero based",
+    "sha256": "bd17f1ee35d5f3c862a4894605855abbb9dda4b0621fdb0ac4c2c8c7bb7e730a"
+  },
+  "input": {
+    "layout": "NHWC",
+    "shape": [1, 640, 640, 3],
+    "dtype": "uint8",
+    "color_order": "RGB",
+    "source_format": "RGB565LE",
+    "preprocess": {
+      "source_size": [1920, 1080],
+      "resize_mode": "letterbox",
+      "resize_interpolation": "nearest_center_sample",
+      "resize_coordinate_rule": "floor((2*dst_index+1)*source_size/(2*destination_size))",
+      "resized_size": [640, 360],
+      "padding": [0, 140, 0, 140],
+      "padding_value": 114,
+      "channel_expand": "RGB565LE to RGB888",
+      "channel_expand_rule": "R/B=(value5<<3)|(value5>>2); G=(value6<<2)|(value6>>4)",
+      "normalization": "none_in_C; model_internal_or_toolkit_normalization_unverified",
+      "quantization": "RKNN runtime converts UINT8 input using model tensor attributes",
+      "toolkit_mean_values": null,
+      "toolkit_std_values": null
+    }
+  },
+  "outputs": {
+    "layout": "NCHW",
+    "dtype": "native_quantized_or_float_requested",
+    "tensors": [
+      {"index": 0, "shape": [1, 255, 80, 80], "stride": 8},
+      {"index": 1, "shape": [1, 255, 40, 40], "stride": 16},
+      {"index": 2, "shape": [1, 255, 20, 20], "stride": 32}
+    ],
+    "values_per_anchor": 85,
+    "head_count": 3,
+    "activation": "post_sigmoid",
+    "quantized_tensor_attributes": "Read dtype, qnt_type, zero_point and scale from RKNN_QUERY_OUTPUT_ATTR; do not hardcode scale or zero_point."
+  },
+  "quantization": {
+    "weights": "int8",
+    "activations": "int8",
+    "calibration_dataset": null,
+    "calibration_rule": "Use RGB565-derived deployment images covering daylight, shadow, night, signal lights and lane markings.",
+    "accuracy_gate": "Compare PyTorch, ONNX, RKNN desktop and RK3568 outputs on the same frame set before replacement."
+  },
+  "decoder": {
+    "type": "yolov5_anchor_grid",
+    "objectness": "post_sigmoid_from_model",
+    "class_probability": "post_sigmoid_from_model",
+    "apply_sigmoid": false,
+    "box_center": "(xy*2-0.5+grid)*stride",
+    "box_size": "(wh*2)^2*anchor",
+    "score": "objectness*class_probability",
+    "confidence_threshold": 0.25,
+    "nms_threshold": 0.45,
+    "coordinate_space": "1920x1080 source frame after removing letterbox",
+    "implementation": "pcie_rknn_probe.c"
+  },
+  "semantic_bindings": {
+    "traffic_light_class_id": 9,
+    "occluder_class_ids": [0, 1, 2, 3, 5, 7],
+    "traffic_light_state": "Not encoded by this detector; traffic_light.py uses color evidence.",
+    "lane_geometry": "Not encoded by this detector; lane_detection.py uses image geometry."
+  },
+  "compatibility": {
+    "c_decoder": "pcie_rknn_probe.c expects class_count=80, three YOLOv5 heads and the anchors above.",
+    "python_decoder": "rknn_stream.py and draw_detections.py expect COCO labels in this order.",
+    "change_rule": "Any class count, head layout, anchor, input, preprocessing or quantization change requires a new manifest and decoder review."
+  },
+  "implementation_hash_rule": "sha256 of UTF-8 text with CRLF normalized to LF",
+  "implementation_files": {
+    "pcie_rknn_probe.c": "31fb1528fcb439b69be94f35a18975185af11f00020d68fba05b6185e558fd64",
+    "rknn_stream.py": "7fab53e45ef1f7e07226508d916ad58d9294ab69c100e736c2f4a102912386aa",
+    "draw_detections.py": "c8c57ee76dc312a2623553b8a9a4f66f23ddf28e79b7d4d04a21ce1ccf51e480",
+    "traffic_light.py": "7d32219101b231be849bea60f80c25224c5b953dc4c536a6290a48da05693e57",
+    "lane_detection.py": "2ab1ad65402a1c36b1fa57a251adee87673fbb241b044bd9fa2056d12eb4536f",
+    "frame_format.py": "72842049492e3a9704925169bd8712cb391ad75f76a8805aa8fe0ccfa70e4b49"
+  }
+}

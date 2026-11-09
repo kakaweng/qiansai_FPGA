@@ -30,15 +30,19 @@ qiansai_FPGA/
 │   ├── ipcore/               # IP 核（PCIe、DDR3、FIFO、PLL 等）
 │   ├── generate_bitstream/   # 当前位流输出
 │   └── *.sbit                # 各版本固化位流（见下表）
-└── host/                     # RK3568 板端代码（C 源码 + 脚本）
-    ├── pcie/                 # PCIe 驱动测试、多视频服务器、RKNN 探针
-    ├── lane/                 # 车道线检测核心
-    ├── junction/             # 路口、行人、目标检测
-    ├── front/                # 前视与驾驶辅助
-    ├── sync/                 # 多源同步与录像控制
-    ├── fpga/                 # FPGA 按键 / 灯光反馈
-    ├── common/               # 帧拼接、校验、调度
-    └── scripts/              # 构建、部署、运行脚本
+├── host/                     # RK3568 板端 + 上位机代码
+│   ├── pcie/                 # PCIe 驱动测试、多视频服务器、RKNN 探针
+│   ├── lane/                 # 车道线检测核心
+│   ├── junction/             # 路口、行人、目标检测
+│   ├── front/                # 前视与驾驶辅助
+│   ├── sync/                 # 多源同步与录像控制
+│   ├── fpga/                 # FPGA 按键 / 灯光反馈
+│   ├── common/               # 帧拼接、校验、调度
+│   ├── preview/              # 上位机预览与决策演示（Python + 启动脚本）
+│   ├── config/               # 模型清单、标签、决策场景配置
+│   └── scripts/              # 构建、部署、运行脚本
+└── docs/                     # 设计文档与分阶段验证记录（57 篇）
+    └── demo/                 # 演示素材索引（index.html + manifest）
 ```
 
 ## FPGA 位流版本
@@ -49,6 +53,8 @@ qiansai_FPGA/
 | `hdmi_loop.junction_keys_v2.sbit` | 路口方向键 KEY5/6/7（左转/直行/右转），保留三路采集 |
 | `hdmi_loop.drive_feedback_v1.sbit` | 辅助驾驶实体灯反馈（模拟通行 / 停车 / 礼让 / 违规报警） |
 | `hdmi_loop.lowlight_v2.sbit` | 暗光增强 v2（保边降噪、增益、高光保护，三档强度） |
+
+其余位流为历史版本，保留用于追溯与回退。
 
 ## 板端快速开始
 
@@ -62,7 +68,33 @@ bash host/scripts/run_front_pie_board.sh
 bash host/scripts/stop_rknn_server.sh
 ```
 
-预览入口（`preview_*.sh` / `preview_*.py`）位于原工程 `pcie_host` 目录，本仓库只包含板端代码。
+## 上位机预览
+
+预览与决策演示程序在 `host/preview/`：
+
+```bash
+# 单路识别 + 冻结路口预演（Windows / Ubuntu）
+bash host/preview/preview_pie_anticipation.sh
+
+# 三路视频预览
+bash host/preview/preview_three_video.sh
+
+# 辅助驾驶统一预览
+bash host/preview/preview_drive_assist.sh
+```
+
+Python 程序直接调用：`python3 host/preview/preview_front_p1.py`、`preview_multivideo.py`、`driving_decision_demo.py` 等，参数见对应脚本头部说明。
+
+## 文档索引
+
+`docs/` 下按阶段记录了设计、部署与验证过程，主要包括：
+
+- `README.md`（原工程完整说明，122KB，含全部阶段变更记录）
+- `DECISION.md`、`LANE.md`、`MULTIVIDEO.md`、`RKNN.md`、`TRAFFIC.md`、`TIMING.md` —— 决策、车道、多视频、模型、交通、时序设计
+- `*_RK3568.md` —— 各功能板端部署与验收说明
+- `COMPETITION_DEMO_PLAN.md`、`THREE_VIDEO_DISPLAY.md` —— 赛题演示规划与操作
+- `PIE_*`、`CROSSWALK_*`、`JUNCTION_*`、`FROZEN_JUNCTION_PREVIEW.md` —— 行人、横道、路口与冻结预演
+- `FIRMWARE_CATALOG.md` —— 固件清单与 SHA256 校验
 
 ## 功能清单
 
@@ -72,6 +104,10 @@ bash host/scripts/stop_rknn_server.sh
 - 多路输入：HDMI / OV5640 / 以太网三路并行采集与低延迟传输
 - FPGA 图像增强：暗光保边降噪，三档增强
 - 辅助驾驶反馈：实体 LED 灯指示通行 / 停车 / 礼让 / 报警
+
+## 演示素材
+
+`docs/demo/` 提供演示素材索引（9 组 11 个视频的清单、来源与 SHA256）。视频本体约 296MB，不随仓库托管，可从工程所在地的 `demo_cases_20261102/` 目录获取。
 
 ## 验证状态
 

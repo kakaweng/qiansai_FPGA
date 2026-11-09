@@ -1,0 +1,44 @@
+{
+  "scene_id": "video_20260929_112507_lanes",
+  "video_file": "video_20260929_112507.mp4",
+  "video_width": 1920,
+  "video_height": 1080,
+  "video_fps": 30,
+  "video_frames": 1349,
+  "lane_numbering": "1-based from left to right",
+  "intervals": "start_seconds inclusive, end_seconds exclusive",
+  "search_region": [0.15, 0.04, 0.85, 0.60],
+  "min_detection_score": 0.25,
+  "confirm_frames": 3,
+  "evidence_timeout_ms": 500,
+  "fallback_require_pair": true,
+  "color_thresholds": {"green_hue_min": 72, "green_hue_max": 95},
+  "lamp_geometry": {"min_fill_ratio": 0.25, "min_dark_fraction": 0.35},
+  "pair_geometry": {"max_horizontal_gap_ratio": 40, "max_area_ratio": 3},
+  "lane_detection": {
+    "processing_width": 960,
+    "region": [0.0, 0.60, 1.0, 0.87],
+    "vanishing_point": [0.46, 0.60],
+    "camera_center": 0.50,
+    "confirm_frames": 2,
+    "geometry_timeout_ms": 350
+  },
+  "evaluation_only": {
+    "boundary_precision": "approximate seconds supplied by the user",
+    "lane_segments": [
+      {"start_seconds": 0, "end_seconds": 12, "lane_count": 4, "ego_lane": 2},
+      {"start_seconds": 12, "end_seconds": 15, "lane_count": 3, "ego_lane": 2},
+      {"start_seconds": 15, "end_seconds": 24, "lane_count": 5, "ego_lane": 3},
+      {"start_seconds": 24, "end_seconds": 28, "lane_count": 4, "ego_lane": 2},
+      {"start_seconds": 28, "end_seconds": 38, "lane_count": 4, "ego_lane": 1}
+    ],
+    "traffic_signals": [
+      {"start_seconds": 9, "end_seconds": 13, "state": "green_arrow", "direction": "unknown"}
+    ],
+    "events": [
+      {"seconds": 24, "type": "passes_traffic_light"},
+      {"seconds": 28, "type": "lane_change_left", "from_lane": 2, "to_lane": 1},
+      {"seconds": 38, "type": "left_turn"}
+    ]
+  }
+}

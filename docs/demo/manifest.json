@@ -1,0 +1,877 @@
+{
+  "version": 1,
+  "created_date": "2026-11-02",
+  "purpose": "curated development/demo material; not independent evaluation",
+  "video_processing": "accurate time cut and H.264 encode; original resolution and media timing; no detection or simulated labels burned in",
+  "board_verified": false,
+  "cases": [
+    {
+      "id": "01_signal_red_green",
+      "title": "红灯等待 → 绿灯通行",
+      "requirement": "测试方式(1)",
+      "source": "D:\\buduinetdiskdownload\\video_20260929_113539.mp4",
+      "start": 10.0,
+      "end": 35.0,
+      "priority": "主演示",
+      "observation": "前车在红灯前停车，约原片27秒附近变绿后起步；灯位可见。",
+      "operation": "选择直行，红灯期间演示停止/禁止强行通行，绿灯后展示通行提示。",
+      "cue": "原片约26～28秒灯色变化；先确认对应车道的信号灯。",
+      "review_samples": [
+        {
+          "requested_source_seconds": 10.1,
+          "decoded_source_seconds": 10.1
+        },
+        {
+          "requested_source_seconds": 15.04,
+          "decoded_source_seconds": 15.033333333333333
+        },
+        {
+          "requested_source_seconds": 19.979999999999997,
+          "decoded_source_seconds": 19.966666666666665
+        },
+        {
+          "requested_source_seconds": 24.919999999999998,
+          "decoded_source_seconds": 24.933333333333334
+        },
+        {
+          "requested_source_seconds": 29.86,
+          "decoded_source_seconds": 29.866666666666667
+        },
+        {
+          "requested_source_seconds": 34.8,
+          "decoded_source_seconds": 34.8
+        }
+      ],
+      "review_scope": "six source frames; scene selection, not model/board acceptance",
+      "exports": {
+        "front": {
+          "width": 1920,
+          "height": 1080,
+          "nominal_fps": 30.0,
+          "decoded_frames": 750,
+          "first_pts_seconds": 0.0,
+          "last_pts_seconds": 24.966666666666665,
+          "bytes": 36781696,
+          "sha256": "c6d6497ffb7bd92d3041338641a5526d23ecb1f2a2bb5ed0d4b787577711434b",
+          "file": "01_signal_red_green/front.mp4",
+          "source": "D:\\buduinetdiskdownload\\video_20260929_113539.mp4",
+          "source_sha256": "b91c2bc464189e125e69ace24024d19a3870a5c7bf97d750bbc7fcc7ca2b4ea7",
+          "command": [
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\.venv-lane\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
+            "-hide_banner",
+            "-loglevel",
+            "error",
+            "-nostdin",
+            "-y",
+            "-ss",
+            "10.0",
+            "-i",
+            "D:\\buduinetdiskdownload\\video_20260929_113539.mp4",
+            "-t",
+            "25.0",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-fps_mode",
+            "passthrough",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "veryfast",
+            "-crf",
+            "19",
+            "-pix_fmt",
+            "yuv420p",
+            "-threads",
+            "4",
+            "-movflags",
+            "+faststart",
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\demo_cases_20261102\\01_signal_red_green\\front.mp4"
+          ]
+        }
+      }
+    },
+    {
+      "id": "02_dashed_lane_change",
+      "title": "清晰虚线 · 变道请求",
+      "requirement": "测试方式(2)",
+      "source": "D:\\buduinetdiskdownload\\video_20260929_112507.mp4",
+      "start": 3.0,
+      "end": 12.0,
+      "priority": "主演示",
+      "observation": "白天直线路段，本车两侧可见白色虚线，画面较稳定。",
+      "operation": "等待边界确认后按A或D提交变道请求，展示虚线请求反馈。",
+      "cue": "虚线只满足边界条件；单路前视不能证明侧后方安全。",
+      "review_samples": [
+        {
+          "requested_source_seconds": 3.1,
+          "decoded_source_seconds": 3.1
+        },
+        {
+          "requested_source_seconds": 4.84,
+          "decoded_source_seconds": 4.833333333333333
+        },
+        {
+          "requested_source_seconds": 6.58,
+          "decoded_source_seconds": 6.566666666666666
+        },
+        {
+          "requested_source_seconds": 8.32,
+          "decoded_source_seconds": 8.333333333333334
+        },
+        {
+          "requested_source_seconds": 10.06,
+          "decoded_source_seconds": 10.066666666666666
+        },
+        {
+          "requested_source_seconds": 11.8,
+          "decoded_source_seconds": 11.8
+        }
+      ],
+      "review_scope": "six source frames; scene selection, not model/board acceptance",
+      "exports": {
+        "front": {
+          "width": 1920,
+          "height": 1080,
+          "nominal_fps": 30.0,
+          "decoded_frames": 270,
+          "first_pts_seconds": 0.0,
+          "last_pts_seconds": 8.966666666666667,
+          "bytes": 19548104,
+          "sha256": "c1c796a6fb61d8146252c167ecb3b345fcc1de2a9bad44f997fdad8f4e4a0a1a",
+          "file": "02_dashed_lane_change/front.mp4",
+          "source": "D:\\buduinetdiskdownload\\video_20260929_112507.mp4",
+          "source_sha256": "b1e2e90674030485f78bea66b1984a18df3bd6142ce1c5372d5f10fd0456ebcd",
+          "command": [
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\.venv-lane\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
+            "-hide_banner",
+            "-loglevel",
+            "error",
+            "-nostdin",
+            "-y",
+            "-ss",
+            "3.0",
+            "-i",
+            "D:\\buduinetdiskdownload\\video_20260929_112507.mp4",
+            "-t",
+            "9.0",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-fps_mode",
+            "passthrough",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "veryfast",
+            "-crf",
+            "19",
+            "-pix_fmt",
+            "yuv420p",
+            "-threads",
+            "4",
+            "-movflags",
+            "+faststart",
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\demo_cases_20261102\\02_dashed_lane_change\\front.mp4"
+          ]
+        }
+      }
+    },
+    {
+      "id": "03_solid_line_warning",
+      "title": "双黄实线 · 越线请求报警",
+      "requirement": "测试方式(2)",
+      "source": "D:\\buduinetdiskdownload\\video_20260929_113539.mp4",
+      "start": 0.0,
+      "end": 10.0,
+      "priority": "主演示",
+      "observation": "道路中心双黄实线清晰，含施工与会车环境。",
+      "operation": "先确认左边界为实线，再按A模拟向左越线请求，展示禁止/报警。",
+      "cue": "这是实线越线报警素材，不是允许驶入对向车道的演示。",
+      "review_samples": [
+        {
+          "requested_source_seconds": 0.1,
+          "decoded_source_seconds": 0.1
+        },
+        {
+          "requested_source_seconds": 2.04,
+          "decoded_source_seconds": 2.033333333333333
+        },
+        {
+          "requested_source_seconds": 3.9800000000000004,
+          "decoded_source_seconds": 3.966666666666667
+        },
+        {
+          "requested_source_seconds": 5.92,
+          "decoded_source_seconds": 5.933333333333334
+        },
+        {
+          "requested_source_seconds": 7.86,
+          "decoded_source_seconds": 7.866666666666666
+        },
+        {
+          "requested_source_seconds": 9.8,
+          "decoded_source_seconds": 9.8
+        }
+      ],
+      "review_scope": "six source frames; scene selection, not model/board acceptance",
+      "exports": {
+        "front": {
+          "width": 1920,
+          "height": 1080,
+          "nominal_fps": 30.0,
+          "decoded_frames": 300,
+          "first_pts_seconds": 0.0,
+          "last_pts_seconds": 9.966666666666667,
+          "bytes": 22126119,
+          "sha256": "d18e2e214ab3a7713e464774dac7ff05587b5f0cc50a05682a4b5e5b917e7667",
+          "file": "03_solid_line_warning/front.mp4",
+          "source": "D:\\buduinetdiskdownload\\video_20260929_113539.mp4",
+          "source_sha256": "b91c2bc464189e125e69ace24024d19a3870a5c7bf97d750bbc7fcc7ca2b4ea7",
+          "command": [
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\.venv-lane\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
+            "-hide_banner",
+            "-loglevel",
+            "error",
+            "-nostdin",
+            "-y",
+            "-ss",
+            "0.0",
+            "-i",
+            "D:\\buduinetdiskdownload\\video_20260929_113539.mp4",
+            "-t",
+            "10.0",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-fps_mode",
+            "passthrough",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "veryfast",
+            "-crf",
+            "19",
+            "-pix_fmt",
+            "yuv420p",
+            "-threads",
+            "4",
+            "-movflags",
+            "+faststart",
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\demo_cases_20261102\\03_solid_line_warning\\front.mp4"
+          ]
+        }
+      }
+    },
+    {
+      "id": "04_pedestrian_crossing",
+      "title": "标准行人横穿 · 冻结路口预演",
+      "requirement": "测试方式(4)",
+      "source": "F:\\waymo_data\\pie\\set01\\video_0004.mp4",
+      "start": 42.0,
+      "end": 63.0,
+      "priority": "主演示",
+      "observation": "用户已确认原片约49～53秒的横穿关系；用PIE官方行为标注辅助定位。",
+      "operation": "先连续播放积累运动历史；原片约53秒暂停，KEY5/6/7选路线，N分析，G推演礼让。",
+      "cue": "导出片约11秒对应原片53秒；路线需与横穿者实际位置对应。",
+      "review_samples": [
+        {
+          "requested_source_seconds": 42.1,
+          "decoded_source_seconds": 42.1
+        },
+        {
+          "requested_source_seconds": 46.24,
+          "decoded_source_seconds": 46.233333333333334
+        },
+        {
+          "requested_source_seconds": 50.379999999999995,
+          "decoded_source_seconds": 50.36666666666667
+        },
+        {
+          "requested_source_seconds": 54.519999999999996,
+          "decoded_source_seconds": 54.53333333333334
+        },
+        {
+          "requested_source_seconds": 58.66,
+          "decoded_source_seconds": 58.66666666666667
+        },
+        {
+          "requested_source_seconds": 62.8,
+          "decoded_source_seconds": 62.800000000000004
+        }
+      ],
+      "review_scope": "six source frames; scene selection, not model/board acceptance",
+      "exports": {
+        "front": {
+          "width": 1920,
+          "height": 1080,
+          "nominal_fps": 30.0,
+          "decoded_frames": 630,
+          "first_pts_seconds": 0.0,
+          "last_pts_seconds": 20.966666666666665,
+          "bytes": 41939587,
+          "sha256": "a7b29791644676c4235c9676159be50805030794b2a4d93d4ac914b37edeb265",
+          "file": "04_pedestrian_crossing/front.mp4",
+          "source": "F:\\waymo_data\\pie\\set01\\video_0004.mp4",
+          "source_sha256": "139f9e5bfed58921da25f4697da98e3f129de34ef591cef55efffec1e9039525",
+          "command": [
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\.venv-lane\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
+            "-hide_banner",
+            "-loglevel",
+            "error",
+            "-nostdin",
+            "-y",
+            "-ss",
+            "42.0",
+            "-i",
+            "F:\\waymo_data\\pie\\set01\\video_0004.mp4",
+            "-t",
+            "21.0",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-fps_mode",
+            "passthrough",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "veryfast",
+            "-crf",
+            "19",
+            "-pix_fmt",
+            "yuv420p",
+            "-threads",
+            "4",
+            "-movflags",
+            "+faststart",
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\demo_cases_20261102\\04_pedestrian_crossing\\front.mp4"
+          ]
+        }
+      }
+    },
+    {
+      "id": "05_green_arrow",
+      "title": "绿色箭头灯 · 路口方向选择",
+      "requirement": "测试方式(1)",
+      "source": "D:\\buduinetdiskdownload\\video_20260929_112507.mp4",
+      "start": 7.0,
+      "end": 15.0,
+      "priority": "补充演示",
+      "observation": "用户已给出的原片9～13秒箭头绿灯区间，含车道箭头。",
+      "operation": "展示箭头灯目标及绿灯颜色识别，使用KEY5/6/7切换模拟路线。",
+      "cue": "现模型识别灯色，不把灯色识别宣称为已可靠识别箭头朝向及车道归属。",
+      "review_samples": [
+        {
+          "requested_source_seconds": 7.1,
+          "decoded_source_seconds": 7.1
+        },
+        {
+          "requested_source_seconds": 8.64,
+          "decoded_source_seconds": 8.633333333333333
+        },
+        {
+          "requested_source_seconds": 10.18,
+          "decoded_source_seconds": 10.166666666666666
+        },
+        {
+          "requested_source_seconds": 11.72,
+          "decoded_source_seconds": 11.733333333333333
+        },
+        {
+          "requested_source_seconds": 13.260000000000002,
+          "decoded_source_seconds": 13.266666666666666
+        },
+        {
+          "requested_source_seconds": 14.8,
+          "decoded_source_seconds": 14.799999999999999
+        }
+      ],
+      "review_scope": "six source frames; scene selection, not model/board acceptance",
+      "exports": {
+        "front": {
+          "width": 1920,
+          "height": 1080,
+          "nominal_fps": 30.0,
+          "decoded_frames": 240,
+          "first_pts_seconds": 0.0,
+          "last_pts_seconds": 7.966666666666667,
+          "bytes": 18790716,
+          "sha256": "2a04aab4c47376ef85701844fe8e56ca10fd0bacc8538e439bc19b96da4645a6",
+          "file": "05_green_arrow/front.mp4",
+          "source": "D:\\buduinetdiskdownload\\video_20260929_112507.mp4",
+          "source_sha256": "b1e2e90674030485f78bea66b1984a18df3bd6142ce1c5372d5f10fd0456ebcd",
+          "command": [
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\.venv-lane\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
+            "-hide_banner",
+            "-loglevel",
+            "error",
+            "-nostdin",
+            "-y",
+            "-ss",
+            "7.0",
+            "-i",
+            "D:\\buduinetdiskdownload\\video_20260929_112507.mp4",
+            "-t",
+            "8.0",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-fps_mode",
+            "passthrough",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "veryfast",
+            "-crf",
+            "19",
+            "-pix_fmt",
+            "yuv420p",
+            "-threads",
+            "4",
+            "-movflags",
+            "+faststart",
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\demo_cases_20261102\\05_green_arrow\\front.mp4"
+          ]
+        }
+      }
+    },
+    {
+      "id": "06_night_enhancement",
+      "title": "真实夜间道路 · FPGA暗光增强",
+      "requirement": "图像采集处理(2) / 场景(1)",
+      "source": "F:\\waymo_data\\decoded_perception\\perception_15272375112495403395_620_000_640_000\\front.mp4",
+      "start": 0.0,
+      "end": 19.5,
+      "priority": "主演示",
+      "observation": "原始夜间场景，可见标线、车灯和路口；没有人工压暗。",
+      "operation": "用KEY1切换原彩色/暗光增强，用KEY2/3调阈值，展示处理效果。",
+      "cue": "用于图像处理展示；夜间自动驾驶识别效果另行实机验证。",
+      "review_samples": [
+        {
+          "requested_source_seconds": 0.1,
+          "decoded_source_seconds": 0.09995699999999999
+        },
+        {
+          "requested_source_seconds": 3.94,
+          "decoded_source_seconds": 4.099892
+        },
+        {
+          "requested_source_seconds": 7.779999999999999,
+          "decoded_source_seconds": 7.900631
+        },
+        {
+          "requested_source_seconds": 11.62,
+          "decoded_source_seconds": 11.700586999999999
+        },
+        {
+          "requested_source_seconds": 15.459999999999999,
+          "decoded_source_seconds": 15.500020999999998
+        },
+        {
+          "requested_source_seconds": 19.3,
+          "decoded_source_seconds": 19.29983
+        }
+      ],
+      "review_scope": "six source frames; scene selection, not model/board acceptance",
+      "exports": {
+        "front": {
+          "width": 1920,
+          "height": 1280,
+          "nominal_fps": 9.897435897435898,
+          "decoded_frames": 193,
+          "first_pts_seconds": 0.0,
+          "last_pts_seconds": 19.400000000000002,
+          "bytes": 63941628,
+          "sha256": "d4b7b32732e87b47e52beafc4ad008f1d8359cbcd15345dab4ded148d2f14b11",
+          "file": "06_night_enhancement/front.mp4",
+          "source": "F:\\waymo_data\\decoded_perception\\perception_15272375112495403395_620_000_640_000\\front.mp4",
+          "source_sha256": "471afc59b741411c5736b1106dbc3cc7cbf6121b07bb451d0930418cca4a5765",
+          "command": [
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\.venv-lane\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
+            "-hide_banner",
+            "-loglevel",
+            "error",
+            "-nostdin",
+            "-y",
+            "-ss",
+            "0.0",
+            "-i",
+            "F:\\waymo_data\\decoded_perception\\perception_15272375112495403395_620_000_640_000\\front.mp4",
+            "-t",
+            "19.5",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-fps_mode",
+            "passthrough",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "veryfast",
+            "-crf",
+            "19",
+            "-pix_fmt",
+            "yuv420p",
+            "-threads",
+            "4",
+            "-movflags",
+            "+faststart",
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\demo_cases_20261102\\06_night_enhancement\\front.mp4"
+          ]
+        }
+      }
+    },
+    {
+      "id": "07_roadside_person",
+      "title": "路边行人 · 不一见人就报警",
+      "requirement": "测试方式(4)",
+      "source": "F:\\waymo_data\\pie\\set01\\video_0001.mp4",
+      "start": 31.0,
+      "end": 43.0,
+      "priority": "补充演示",
+      "observation": "官方标注目标含尚未横穿及与任务无关的轨迹；不是全片无人负例。",
+      "operation": "连续播放，展示行人可见而不直接等同于当前路径冲突；保持未知提示的真实性。",
+      "cue": "此段不能据轨迹级not-crossing标签直接宣称任何时刻都可通行。",
+      "review_samples": [
+        {
+          "requested_source_seconds": 31.1,
+          "decoded_source_seconds": 31.1
+        },
+        {
+          "requested_source_seconds": 33.44,
+          "decoded_source_seconds": 33.43333333333334
+        },
+        {
+          "requested_source_seconds": 35.78,
+          "decoded_source_seconds": 35.766666666666666
+        },
+        {
+          "requested_source_seconds": 38.12,
+          "decoded_source_seconds": 38.13333333333333
+        },
+        {
+          "requested_source_seconds": 40.459999999999994,
+          "decoded_source_seconds": 40.46666666666667
+        },
+        {
+          "requested_source_seconds": 42.8,
+          "decoded_source_seconds": 42.800000000000004
+        }
+      ],
+      "review_scope": "six source frames; scene selection, not model/board acceptance",
+      "exports": {
+        "front": {
+          "width": 1920,
+          "height": 1080,
+          "nominal_fps": 30.0,
+          "decoded_frames": 360,
+          "first_pts_seconds": 0.0,
+          "last_pts_seconds": 11.966666666666667,
+          "bytes": 27590115,
+          "sha256": "8ee149cbc075f37d20a7dcc76e18408f4dd2d13e7c66699e6ad68734877833f1",
+          "file": "07_roadside_person/front.mp4",
+          "source": "F:\\waymo_data\\pie\\set01\\video_0001.mp4",
+          "source_sha256": "abc94e54ed3a77c89fde806835e59ee58fd376c64e13ab4ea8bafe36776aca2a",
+          "command": [
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\.venv-lane\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
+            "-hide_banner",
+            "-loglevel",
+            "error",
+            "-nostdin",
+            "-y",
+            "-ss",
+            "31.0",
+            "-i",
+            "F:\\waymo_data\\pie\\set01\\video_0001.mp4",
+            "-t",
+            "12.0",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-fps_mode",
+            "passthrough",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "veryfast",
+            "-crf",
+            "19",
+            "-pix_fmt",
+            "yuv420p",
+            "-threads",
+            "4",
+            "-movflags",
+            "+faststart",
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\demo_cases_20261102\\07_roadside_person\\front.mp4"
+          ]
+        }
+      }
+    },
+    {
+      "id": "08_complex_junction",
+      "title": "复杂路口 · 行人与骑行者混行",
+      "requirement": "测试方式(4)",
+      "source": "D:\\buduinetdiskdownload\\video_20260929_113539.mp4",
+      "start": 60.0,
+      "end": 74.0,
+      "priority": "挑战备选",
+      "observation": "转向时含多辆骑行者，原片70～71秒有近处步行者。",
+      "operation": "作为泛化和未知场景展示；必要时暂停进行空间分析，说明遮挡/类型混淆。",
+      "cue": "不是主稳定性案例，也不能用此开发素材报告独立准确率。",
+      "review_samples": [
+        {
+          "requested_source_seconds": 60.1,
+          "decoded_source_seconds": 60.1
+        },
+        {
+          "requested_source_seconds": 62.84,
+          "decoded_source_seconds": 62.833333333333336
+        },
+        {
+          "requested_source_seconds": 65.58,
+          "decoded_source_seconds": 65.56666666666666
+        },
+        {
+          "requested_source_seconds": 68.32,
+          "decoded_source_seconds": 68.33333333333333
+        },
+        {
+          "requested_source_seconds": 71.06,
+          "decoded_source_seconds": 71.06666666666666
+        },
+        {
+          "requested_source_seconds": 73.8,
+          "decoded_source_seconds": 73.8
+        }
+      ],
+      "review_scope": "six source frames; scene selection, not model/board acceptance",
+      "exports": {
+        "front": {
+          "width": 1920,
+          "height": 1080,
+          "nominal_fps": 30.0,
+          "decoded_frames": 420,
+          "first_pts_seconds": 0.0,
+          "last_pts_seconds": 13.966666666666667,
+          "bytes": 22309706,
+          "sha256": "779c38c6104c6599fa93982815fe8d7ff93137b404c18d843af428f4884920f6",
+          "file": "08_complex_junction/front.mp4",
+          "source": "D:\\buduinetdiskdownload\\video_20260929_113539.mp4",
+          "source_sha256": "b91c2bc464189e125e69ace24024d19a3870a5c7bf97d750bbc7fcc7ca2b4ea7",
+          "command": [
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\.venv-lane\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
+            "-hide_banner",
+            "-loglevel",
+            "error",
+            "-nostdin",
+            "-y",
+            "-ss",
+            "60.0",
+            "-i",
+            "D:\\buduinetdiskdownload\\video_20260929_113539.mp4",
+            "-t",
+            "14.0",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-fps_mode",
+            "passthrough",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "veryfast",
+            "-crf",
+            "19",
+            "-pix_fmt",
+            "yuv420p",
+            "-threads",
+            "4",
+            "-movflags",
+            "+faststart",
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\demo_cases_20261102\\08_complex_junction\\front.mp4"
+          ]
+        }
+      }
+    },
+    {
+      "id": "09_three_inputs",
+      "title": "同场景三视角 · 并行传输展示",
+      "requirement": "图像采集处理(1)(3)",
+      "source": "F:\\waymo_data\\decoded_perception\\perception_10980133015080705026_780_000_800_000\\front.mp4",
+      "start": 0.0,
+      "end": 18.0,
+      "priority": "主演示",
+      "extra_sources": {
+        "left_reference": "F:\\waymo_data\\decoded_perception\\perception_10980133015080705026_780_000_800_000\\side_left.mp4",
+        "ethernet_right": "F:\\waymo_data\\decoded_perception\\perception_10980133015080705026_780_000_800_000\\side_right.mp4"
+      },
+      "observation": "同一Waymo片段的前/左侧/右侧画面，保留三路独立输入链路。",
+      "operation": "front走HDMI，ethernet_right走以太网；手机播放left_reference给OV5640拍摄。",
+      "cue": "OV5640仍为拍屏和手动对齐；本案例只证明三路并行传输，不宣称硬件同步或全景几何融合。",
+      "review_samples": [
+        {
+          "requested_source_seconds": 0.1,
+          "decoded_source_seconds": 0.10005299999999999
+        },
+        {
+          "requested_source_seconds": 3.64,
+          "decoded_source_seconds": 3.5990189999999997
+        },
+        {
+          "requested_source_seconds": 7.18,
+          "decoded_source_seconds": 7.19961
+        },
+        {
+          "requested_source_seconds": 10.72,
+          "decoded_source_seconds": 10.699112
+        },
+        {
+          "requested_source_seconds": 14.26,
+          "decoded_source_seconds": 14.299418
+        },
+        {
+          "requested_source_seconds": 17.8,
+          "decoded_source_seconds": 17.799208
+        }
+      ],
+      "review_scope": "six source frames; scene selection, not model/board acceptance",
+      "exports": {
+        "front": {
+          "width": 1920,
+          "height": 1280,
+          "nominal_fps": 10.0,
+          "decoded_frames": 180,
+          "first_pts_seconds": 0.0,
+          "last_pts_seconds": 17.900000000000002,
+          "bytes": 22179858,
+          "sha256": "31845524c1b2dc9775c7821deed41a517de37b1d26cf2ec589066c173706cce9",
+          "file": "09_three_inputs/front.mp4",
+          "source": "F:\\waymo_data\\decoded_perception\\perception_10980133015080705026_780_000_800_000\\front.mp4",
+          "source_sha256": "e331c12b538161e67f9bffb6beb0352e2e3a52f81df731de36be647384c2321a",
+          "command": [
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\.venv-lane\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
+            "-hide_banner",
+            "-loglevel",
+            "error",
+            "-nostdin",
+            "-y",
+            "-ss",
+            "0.0",
+            "-i",
+            "F:\\waymo_data\\decoded_perception\\perception_10980133015080705026_780_000_800_000\\front.mp4",
+            "-t",
+            "18.0",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-fps_mode",
+            "passthrough",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "veryfast",
+            "-crf",
+            "19",
+            "-pix_fmt",
+            "yuv420p",
+            "-threads",
+            "4",
+            "-movflags",
+            "+faststart",
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\demo_cases_20261102\\09_three_inputs\\front.mp4"
+          ]
+        },
+        "left_reference": {
+          "width": 1920,
+          "height": 886,
+          "nominal_fps": 10.0,
+          "decoded_frames": 180,
+          "first_pts_seconds": 0.0,
+          "last_pts_seconds": 17.900000000000002,
+          "bytes": 17613110,
+          "sha256": "28fce68c4b2533029d9e427d01f7888a628314f5de3d849ef6313bbd4687f31d",
+          "file": "09_three_inputs/left_reference.mp4",
+          "source": "F:\\waymo_data\\decoded_perception\\perception_10980133015080705026_780_000_800_000\\side_left.mp4",
+          "source_sha256": "f4dc8eec0fad374add2d27264703a3d4ee711ec082d5e7ae2aaf2ad0cc7e039c",
+          "command": [
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\.venv-lane\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
+            "-hide_banner",
+            "-loglevel",
+            "error",
+            "-nostdin",
+            "-y",
+            "-ss",
+            "0.0",
+            "-i",
+            "F:\\waymo_data\\decoded_perception\\perception_10980133015080705026_780_000_800_000\\side_left.mp4",
+            "-t",
+            "18.0",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-fps_mode",
+            "passthrough",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "veryfast",
+            "-crf",
+            "19",
+            "-pix_fmt",
+            "yuv420p",
+            "-threads",
+            "4",
+            "-movflags",
+            "+faststart",
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\demo_cases_20261102\\09_three_inputs\\left_reference.mp4"
+          ]
+        },
+        "ethernet_right": {
+          "width": 1920,
+          "height": 886,
+          "nominal_fps": 10.0,
+          "decoded_frames": 180,
+          "first_pts_seconds": 0.0,
+          "last_pts_seconds": 17.900000000000002,
+          "bytes": 17169201,
+          "sha256": "7c2035b67cc2a897d47ccfe78904e4c50119b8ebbc966951f443e7bf728fd5ca",
+          "file": "09_three_inputs/ethernet_right.mp4",
+          "source": "F:\\waymo_data\\decoded_perception\\perception_10980133015080705026_780_000_800_000\\side_right.mp4",
+          "source_sha256": "d6ba402b56bd65d090f654fb543a10b01b4907ebce4ee6f54a0c75c2fabf796f",
+          "command": [
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\.venv-lane\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe",
+            "-hide_banner",
+            "-loglevel",
+            "error",
+            "-nostdin",
+            "-y",
+            "-ss",
+            "0.0",
+            "-i",
+            "F:\\waymo_data\\decoded_perception\\perception_10980133015080705026_780_000_800_000\\side_right.mp4",
+            "-t",
+            "18.0",
+            "-map",
+            "0:v:0",
+            "-an",
+            "-fps_mode",
+            "passthrough",
+            "-c:v",
+            "libx264",
+            "-preset",
+            "veryfast",
+            "-crf",
+            "19",
+            "-pix_fmt",
+            "yuv420p",
+            "-threads",
+            "4",
+            "-movflags",
+            "+faststart",
+            "F:\\B_file\\jichuangsai\\Pango_FPGA\\09_pcie_test\\pcie_host\\demo_cases_20261102\\09_three_inputs\\ethernet_right.mp4"
+          ]
+        }
+      }
+    }
+  ]
+}

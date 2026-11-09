@@ -1,0 +1,18 @@
+{
+  "source": "F:/waymo_data/pie/set01/video_0004.mp4",
+  "annotation": "F:/waymo_data/pie/annotations/set01/video_0004_annt.xml",
+  "attributes": "F:/waymo_data/pie/annotations_attributes/set01/video_0004_attributes.xml",
+  "pedestrian_id": "1_4_106",
+  "clip": "04_pedestrian_crossing/front.mp4",
+  "clip_source_start_seconds": 42,
+  "fps": 30,
+  "track_crossing": 1,
+  "crossing_point_frame": 1525,
+  "samples": [
+    {"source_frame": 1470, "source_seconds": 49, "clip_seconds": 7, "action": "walking", "cross": "not-crossing"},
+    {"source_frame": 1525, "source_seconds": 50.8333333333, "clip_seconds": 8.8333333333, "action": "walking", "cross": "crossing"},
+    {"source_frame": 1590, "source_seconds": 53, "clip_seconds": 11, "action": "walking", "cross": "crossing"},
+    {"source_frame": 1620, "source_seconds": 54, "clip_seconds": 12, "action": "walking", "cross": "crossing"}
+  ],
+  "scope": "Official annotation check for demo selection; not model predictions or RK3568 acceptance."
+}

@@ -1,0 +1,13 @@
+{
+  "scene_id": "video_20260929_113539_redgreen",
+  "search_region": [0.40, 0.25, 0.73, 0.53],
+  "min_detection_score": 0.25,
+  "confirm_frames": 3,
+  "evidence_timeout_ms": 500,
+  "fallback_require_pair": true,
+  "evaluation_only": {
+    "end_seconds": 30,
+    "expected_green_transition_seconds": [25, 26],
+    "red_until_transition": true
+  }
+}
